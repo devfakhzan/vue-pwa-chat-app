@@ -1,0 +1,334 @@
+.scrollable {
+    overflow-y: auto;
+    height: 90vh;
+  }
+  .typer{
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    bottom: 0;
+    height: 4.9rem;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 -5px 10px -5px rgba(0,0,0,.2);
+  }
+  .typer input[type=text]{
+    position: absolute;
+    left: 3.5rem;
+    padding: 1rem;
+    width: 80%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 1.25rem;
+  }
+  .chat-container{
+    box-sizing: border-box;
+    height: calc(100vh - 9.5rem);
+    overflow-y: auto;
+    padding: 10px;
+    background-color: #f2f2f2;
+  }
+  .message-container{
+    margin-bottom: 3px;
+  }
+  .message-container.own{
+    text-align: right;
+  }
+  .message-container.own .message{
+    background-color: lightskyblue;
+  }
+  .chat-container .from{
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .chat-container .message{
+    padding: 8px;
+    background-color: lightgreen;
+    border-radius: 8px;
+    display:inline-block;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.2), 0 1px 1px 0 rgba(0,0,0,0.14), 0 2px 1px -1px rgba(0,0,0,0.12);
+    max-width: 50%;
+    word-wrap: break-word;
+    }
+  @media (max-width: 480px) {
+    .chat-container .message{
+      max-width: 60%;
+    }
+  }
+
+  #scroll-to-bottom-button {
+    cursor: pointer;
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    position: fixed;
+    bottom: 110px;
+    right: 26px;
+    font-size: 38px;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-family: monospace;
+    background: lightgreen;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 20%), 0 1px 1px 0 rgb(0 0 0 / 14%), 0 2px 1px -1px rgb(0 0 0 / 12%);
+  }
+
+  #fetching-messages {
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    background: rgba(0,0,0,0.3);
+    color: #fff;
+    top: 0;
+  }
+
+  #emoji-fiesta-container {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 91%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    user-select: none;
+    overflow-y: hidden;
+    overflow-x: hidden;
+  }
+
+.emoji-1 {
+  left: 8%;
+  animation-delay: 1s;
+}
+.emoji-1 .emoji-animation-y{
+  animation-duration: 7s;
+  animation-delay: 0s;
+}
+
+.emoji-2 {
+  left: 40%;
+  animation-delay: 2s;
+}
+.emoji-2 .emoji-animation-y{
+  animation-duration: 6s;
+  animation-delay: 2s;
+}
+
+.emoji-3 {
+  right: 15%;
+  animation-delay: 1s;
+}
+.emoji-3 .emoji-animation-y{
+  animation-duration: 5s;
+  animation-delay: 1.5s;
+}
+
+.emoji-4 {
+  left: 8%; 
+  animation-delay: 2s;
+}
+.emoji-4 .emoji-animation-y{
+  animation-duration: 6s;
+  animation-delay: 3s;
+}
+
+.emoji-5 {
+  left: 40%; 
+  animation-delay: 1s;
+}
+.emoji-5 .emoji-animation-y{
+  animation-duration: 5s;
+  animation-delay: 0;
+}
+
+.emoji-6 {
+  left: 45%;
+  animation-delay: 2s;
+}
+.emoji-6 .emoji-animation-y{
+  animation-duration: 7s;
+  animation-delay: 3.5s;
+}
+
+.emoji-7 {
+  right: 15%;
+  animation-delay: 1s;
+}
+.emoji-7 .emoji-animation-y{
+  animation-duration: 4s;
+  animation-delay: 3s;
+}
+
+.emoji-8 {
+  right: 5%;
+}
+.emoji-8 .emoji-animation-y{
+  animation-duration: 5s;
+}
+
+.emoji-9 {
+  top: -375px;
+  left: 14%;  
+}
+
+.emoji-10 {
+  bottom: -350px;
+  right: -50px;	
+}
+
+.emoji-container{
+  position: absolute;
+  bottom: -250px;
+}
+
+.emoji-large {
+  width: 231px;
+  height: 231px;
+  position: absolute;
+  bottom: 20;
+  font-size: 10rem;
+}
+
+.emoji-small {
+  width: 82px;
+  height: 82px;
+  font-size: 5rem;
+}
+
+.emoji-animation-x { 
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-name: emojiXAnimFrames;
+  animation-timing-function: ease;
+  animation-direction: alternate;
+}
+
+.emoji-animation-y { 
+  animation-name: emojiYAnimFrames;
+  animation-timing-function: linear;
+}
+
+
+ @keyframes emojiXAnimFrames {
+  0% {
+    transform: translateX(0);
+   }
+  100% {
+    transform: translateX(50px);
+   }
+}
+
+ @keyframes emojiYAnimFrames {
+  0% {
+    transform: translateY(100px);
+   }
+  50% {
+    opacity: 85%;
+   }
+  100% {
+    transform: translateY(-1250px);
+    opacity: 0;
+   }
+}
+
+/* Tailwind CSS-styled demo is available here: https://codepen.io/DCzajkowski/pen/Brxvzj */
+
+.wrapper {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .regular-input {
+    padding: 0.5rem 1rem;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    width: 20rem;
+    height: 12rem;
+    outline: none;
+  }
+  
+  .regular-input:focus {
+    box-shadow: 0 0 0 3px rgba(66,153,225,.5);
+  }
+  
+  .emoji-invoker {
+    top: 0.5rem;
+    right: -0.3rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    padding: 0;
+    background: none !important;
+    box-shadow: none;
+  }
+  .emoji-invoker:hover {
+    transform: scale(1.1);
+  }
+  
+  .emoji-picker {
+    top: 58% !important;
+    left: 40px !important;
+    overflow-x: hidden;
+    position: absolute;
+    z-index: 1;
+    font-family: Montserrat;
+    border: 1px solid #ccc;
+    width: 15rem;
+    height: 20rem;
+    overflow: scroll;
+    padding: 1rem;
+    box-sizing: border-box;
+    border-radius: 0.5rem;
+    background: #fff;
+    box-shadow: 1px 1px 8px #c7dbe6;
+  }
+  .emoji-picker__search {
+    display: flex;
+  }
+  .emoji-picker__search > input {
+    flex: 1;
+    border-radius: 10rem;
+    border: 1px solid #ccc;
+    padding: 0.5rem 1rem;
+    outline: none;
+  }
+  .emoji-picker h5 {
+    margin-bottom: 0;
+    color: #b1b1b1;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    cursor: default;
+  }
+  .emoji-picker .emojis {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .emoji-picker .emojis:after {
+    content: "";
+    flex: auto;
+  }
+  .emoji-picker .emojis span {
+    padding: 0.2rem;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  .emoji-picker .emojis span:hover {
+    background: #ececec;
+    cursor: pointer;
+  }
+  
