@@ -3,16 +3,20 @@ version: 0.2
 phases:
   install:
     commands:
-      - npm install
+      - npm i npm@latest -g
+      - pip install --upgrade pip
+      - pip install --upgrade awscli
   pre_build:
     commands:
+      - echo Pre_build Phase
       - npm install
   build:
     commands:
+      - echo Build Phase
       - npm run build
   post_build:
     commands:
-      - echo nothing to do
+      - echo PostBuild Phase
 artifacts:
   files:
     - '**/*'
