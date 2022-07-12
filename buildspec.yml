@@ -17,7 +17,4 @@ phases:
   post_build:
     commands:
       - echo PostBuild Phase
-artifacts:
-  files:
-    - '**/*'
-  base-directory: dist
+      - aws s3 sync ./dist $S3_BUCKET
