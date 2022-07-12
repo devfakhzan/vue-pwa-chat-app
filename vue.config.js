@@ -4,7 +4,7 @@ module.exports = defineConfig({
     'vuetify'
   ],
   pwa: {
-    name: 'My App',
+    name: 'Vue PWA Chat App by Fakhzan',
     themeColor: '#4DBA87',
     msTileColor: '#000000',
     appleMobileWebAppCapable: 'yes',
