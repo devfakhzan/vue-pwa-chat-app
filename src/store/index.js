@@ -17,10 +17,6 @@ import {
   onDisconnect,
   onChildRemoved
 } from "firebase/database";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyBfXDmBmiZ69zK1_hSE3S3OF9UFEjcx7tE",
   authDomain: "test-5b1f3.firebaseapp.com",
