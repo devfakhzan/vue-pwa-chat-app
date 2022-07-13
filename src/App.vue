@@ -10,7 +10,9 @@
       </div>
 
       <v-spacer></v-spacer>
-
+      <v-btn @click="logout" v-if="loggedIn">
+        Logout
+      </v-btn>
       <v-btn
         href="https://github.com/devfakhzan/vue-pwa-chat-app"
         target="_blank"
@@ -48,6 +50,16 @@ export default {
     });
 
   },
+  methods: {
+    logout() {
+      if (!confirm('Are you sure you want to logout?')) {
+        return;
+      }
+
+      this.$store.commit('logout');
+      window.location.reload();
+    }
+  },
   watch: {
     '$store.state.login': {
       handler(val) {
@@ -56,6 +68,11 @@ export default {
         }
       },
       deep: true
+    }
+  },
+  computed: {
+    loggedIn() {
+      return this.$store.state.login?.username && this.$store.state.login?.uuid;
     }
   }
 };

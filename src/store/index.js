@@ -52,6 +52,15 @@ export default new Vuex.Store({
   },
   getters: {},
   mutations: {
+    logout(state) {
+      localStorage.removeItem("username");
+      localStorage.removeItem("uuid");
+
+      state.login = {
+        uuid: null,
+        username: null,
+      }
+    },
     removeOnlineUser(state, uuid) {
       state.onlineUsers = state.onlineUsers.filter(u => u.uuid !== uuid);
     },
@@ -137,7 +146,9 @@ export default new Vuex.Store({
             return m.key == data.key
           })) {
             ctx.commit("setMessage", child);
-            ctx.commit("emojiFiesta", {str: data.val().message})
+            if (ctx.state.messages.length > 20) {
+              ctx.commit("emojiFiesta", {str: data.val().message})
+            }
           }
           await ctx.dispatch("scrollToBottom");
         });
